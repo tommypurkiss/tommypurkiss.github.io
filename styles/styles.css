@@ -1,0 +1,262 @@
+/* =======================
+   🌐 Global Styles & Reset
+   ======================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  min-width: 100%;
+  background-color: #0f0f0f;
+  color: white;
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+img,
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  min-height: 100vh;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+section h2 {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* =======================
+   🧱 Layout & Structure
+   ======================= */
+.container {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 25%;
+  max-width: 25%;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.content {
+  width: 75%;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 3px solid #4a90e2;
+  box-shadow: 0 4px 20px rgba(74, 144, 226, 0.3);
+}
+
+.profile-photo-mobile {
+  display: none;
+}
+
+.nav-list {
+  list-style: none;
+  width: 100%;
+}
+
+.nav-list li {
+  margin-top: 1rem;
+}
+
+.nav-list a {
+  display: block;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  color: white;
+}
+
+.nav-list a:hover {
+  background-color: #4a90e2;
+  color: white;
+}
+
+/* =======================
+   📱 Responsive & Media Queries
+   ======================= */
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  transition: opacity 0.2s;
+}
+
+.mobile-menu-toggle:hover svg {
+  opacity: 0.8;
+}
+
+.mobile-header {
+  display: none;
+  width: 100%;
+  height: 60px;
+  justify-content: end;
+  align-items: center;
+  background-color: #0f0f0f;
+  border-bottom: 1px solid #333;
+  position: fixed;
+}
+
+.mobile-nav {
+  background-color: #0f0f0f;
+  padding: 1rem;
+  width: 100%;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 999;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-nav li {
+  margin-bottom: 1rem;
+}
+
+.mobile-nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+  }
+
+  .profile-photo-mobile {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    padding: 0.5rem;
+    width: 100%;
+    /* Account for fixed mobile header */
+    margin-top: 60px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  section {
+    min-height: auto;
+    padding-bottom: 4rem;
+  }
+}
+
+
+/* Here's a chill Pikachu as well (is this what they call, an easter egg?) */
+/*
+quu..__
+ $$$b  `---.__
+  "$$b        `--.                          ___.---uuudP
+   `$$b           `.__.------.__     __.---'      $$$$"              .
+     "$b          -'            `-.-'            $$$"              .'|
+       ".                                       d$"             _.'  |
+         `.   /                              ..."             .'     |
+           `./                           ..::-'            _.'       |
+            /                         .:::-'            .-'         .'
+           :                          ::''\          _.'            |
+          .' .-.             .-.           `.      .'               |
+          : /'$$|           .@"$\           `.   .'              _.-'
+         .'|$u$$|          |$$,$$|           |  <            _.-'
+         | `:$$:'          :$$$$$:           `.  `.       .-'
+         :                  `"--'             |    `-.     \
+        :##.       ==             .###.       `.      `.    `\
+        |##:                      :###:        |        >     >
+        |#'     `..'`..'          `###'        x:      /     /
+         \                                   xXX|     /    ./
+          \                                xXXX'|    /   ./
+          /`-.                                  `.  /   /
+         :    `-  ...........,                   | /  .'
+         |         ``:::::::'       .            |<    `.
+         |             ```          |           x| \ `.:``.
+         |                         .'    /'   xXX|  `:`M`M':.
+         |    |                    ;    /:' xXXX'|  -'MMMMM:'
+         `.  .'                   :    /:'       |-'MMMM.-'
+          |  |                   .'   /'        .'MMM.-'
+          `'`'                   :  ,'          |MMM<
+            |                     `'            |tbap\
+             \                                  :MM.-'
+              \                 |              .''
+               \.               `.            /
+                /     .:::::::.. :           /
+               |     .:::::::::::`.         /
+               |   .:::------------\       /
+              /   .''               >::'  /
+              `',:                 :    .'
+                                   `:.'
+*/

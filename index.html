@@ -1,11 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tommy Purkiss | Portfolio</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
-    Hello, World!
+    <div class="container">
+        <!-- Mobile Navigation -->
+        <header class="mobile-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24">
+                    <path fill="#ffffff"
+                        d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+                </svg>
+            </button>
+        </header>
+
+        <nav class="mobile-nav hidden">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Navigation End -->
+
+        <!-- Desktop -->
+        <aside class="sidebar">
+            <div class="profile-photo">
+                <img src="https://avatars.githubusercontent.com/u/25619090?v=4" alt="Profile Photo" />
+            </div>
+            <h1>Tommy Purkiss</h1>
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <section id="home" class="flex-center text-center">
+                <!-- <h2>Home</h2> -->
+
+                <div class="profile-photo profile-photo-mobile">
+                    <img src="https://avatars.githubusercontent.com/u/25619090?v=4" alt="Profile Photo" />
+                </div>
+
+                <p>Hey there! I’m Tommy 👋 a passionate developer based in London who loves crafting clean,
+                    user-friendly web experiences.</p>
+                <p>Whether it’s Angular, React (a bit), or just good old JavaScript, I’m all about turning ideas into
+                    polished,
+                    working code.</p>
+                <p>Browse through to see some projects I’m proud of, or get in touch if you want to collaborate or just
+                    chat tech.</p>
+            </section>
+
+            <section id="about" class="flex-center text-center">
+                <h2>About Me</h2>
+                <p>About me info is still pending. As you can see I am incredibly interesting!</p>
+            </section>
+
+            <section id="projects" class="flex-center text-center">
+                <h2>Projects</h2>
+                <p>Yeah, so this section is pretty empty right now. I promise I’ll fill it up soon—just waiting for my
+                    code to stop being shy and start showing off. In the meantime, imagine a gallery of awesome
+                    projects, each one cooler than the last. Stay tuned!</p>
+            </section>
+
+            <section id="contact" class="flex-center text-center">
+                <h2>Contact</h2>
+                <p>So here's where I'm gonna enter my LinkedIn, email, Github yada yada.</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- JS stuff -->
+    <script src="scripts/main.js" defer></script>
 </body>
+
 </html>
