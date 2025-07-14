@@ -21,6 +21,27 @@ function resetScrollOnLoad() {
   });
 }
 
+function setupMobileNavLinks() {
+  const navLinks = document.querySelectorAll('.mobile-nav a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.add('hidden');
+    });
+  });
+}
+
+function setupOutsideClickListener() {
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    const clickedInsideNav = mobileNav.contains(target);
+    const clickedToggleBtn = toggleBtn.contains(target);
+
+    if (!clickedInsideNav && !clickedToggleBtn) {
+      mobileNav.classList.add('hidden');
+    }
+  });
+}
+
 async function getDataFromGitHub() {
   try {
     const response = await fetch('https://api.github.com/users/tommypurkiss');
@@ -32,6 +53,8 @@ async function getDataFromGitHub() {
 
 async function init() {
   setupMobileMenuToggle();
+  setupMobileNavLinks();
+  setupOutsideClickListener();
   resetScrollOnLoad();
 
   const githubData = await getDataFromGitHub();
