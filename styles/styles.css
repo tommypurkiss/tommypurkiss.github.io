@@ -208,7 +208,7 @@ section h2 {
   min-height: 80px;
   padding: 0.75rem;
   border-radius: 8px;
-  border: none;
+  border: 1px solid #232323;
   resize: vertical;
   font-size: 1rem;
   font-family: inherit;
@@ -221,6 +221,7 @@ section h2 {
 .email-form textarea:focus {
   outline: none;
   box-shadow: 0 0 0 2px #4a90e2;
+  border-color: #4a90e2;
 }
 
 .email-form button {
@@ -228,7 +229,7 @@ section h2 {
   padding: 0.5rem 1.25rem;
   border: none;
   border-radius: 6px;
-  background: #4a90e2;
+  background: #232323;
   color: #fff;
   font-size: 1rem;
   font-weight: 600;
@@ -238,9 +239,45 @@ section h2 {
 
 .email-form button:hover,
 .email-form button:focus {
-  background: #357ab8;
+  background: #181818;
   transform: translateY(-2px) scale(1.05);
   outline: none;
+}
+
+/* Scroll button */
+.scroll-up-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  z-index: 1000;
+}
+
+.scroll-up-btn:hover,
+.scroll-up-btn:focus {
+  background: transparent;
+  transform: scale(1.15);
+  outline: none;
+}
+
+.scroll-up-btn svg {
+  display: block;
+  fill: #fff;
+  transition: filter 0.2s;
+}
+
+.scroll-up-btn:hover svg,
+.scroll-up-btn:focus svg {
+  filter: brightness(1.5);
 }
 
 /* =======================
@@ -329,6 +366,11 @@ section h2 {
     /* Note to self: still thinking if I want a min height on mobile for these sections */
     /* min-height: auto; */ 
     padding-bottom: 4rem;
+  }
+
+  .scroll-up-btn {
+    bottom: 1rem;
+    right: 1rem;
   }
 }
 
