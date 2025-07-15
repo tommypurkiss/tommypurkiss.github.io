@@ -116,21 +116,18 @@ function sendEmail(event) {
   emailjs.init("ZmaE7ZcDHugMVaC8S");
 })();
 
-document
-  .getElementById("email-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    emailjs.sendForm("service_arhr1na", "template_gjui9h8", this).then(
-      function () {
-        document.getElementById("email-status").textContent =
-          "Message sent! 🎉";
-      },
-      function (error) {
-        document.getElementById("email-status").textContent =
-          "Failed to send. Please try again later.";
-      }
-    );
-  });
+document.getElementById("email-form").addEventListener("submit", function (event) {
+  event.preventDefault();
+  emailjs.sendForm("service_arhr1na", "template_gjui9h8", this).then(
+    function () {
+      document.getElementById("email-status").textContent = "Message sent! 🎉";
+    },
+    function (error) {
+      document.getElementById("email-status").textContent =
+        "Failed to send. Please try again later.";
+    }
+  );
+});
 
 /**
  * ===========================
