@@ -51,6 +51,28 @@ async function getDataFromGitHub() {
   }
 }
 
+function sendEmail(event) {
+  event.preventDefault();
+  const message = document.getElementById('email-message').value;
+  const mailto = `mailto:tommypurkiss1@gmail.com?subject=Portfolio%20Message&body=${encodeURIComponent(message)}`;
+  window.location.href = mailto;
+  return false;
+}
+
+(function() {
+  emailjs.init('ZmaE7ZcDHugMVaC8S');
+})();
+
+document.getElementById('email-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  emailjs.sendForm('service_arhr1na', 'template_gjui9h8', this)
+    .then(function() {
+      document.getElementById('email-status').textContent = 'Message sent! 🎉';
+    }, function(error) {
+      document.getElementById('email-status').textContent = 'Failed to send. Please try again later.';
+    });
+});
+
 async function init() {
   setupMobileMenuToggle();
   setupMobileNavLinks();
