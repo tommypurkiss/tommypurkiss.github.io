@@ -353,7 +353,8 @@ section h2 {
     /* Calculate height properly accounting for fixed header */
     height: calc(100vh - 60px);
     height: calc(100dvh - 60px);
-    margin-top: 60px;
+    /* TODO: commented out for mobile, come back and delete in future if ok */
+    /* margin-top: 60px; */ 
     overscroll-behavior: contain;
   }
 
