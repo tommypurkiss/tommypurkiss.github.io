@@ -273,7 +273,6 @@ section {
 .project-card.skeleton:hover {
   background: #282828;
   transform: translateY(-6px) scale(1.03);
-  filter: drop-shadow(0 0 4px #5bbad5);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
 }
 
@@ -292,7 +291,9 @@ section {
 /* contact */
 #contact {
   height: auto;
+  min-height: auto;
 }
+
 /* Social Icons Styling */
 .social-icons {
   display: flex;
