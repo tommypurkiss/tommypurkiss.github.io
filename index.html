@@ -73,49 +73,57 @@
 
       <!-- Desktop -->
       <aside class="sidebar">
-        <div class="profile-photo profile-photo-desktop">
-          <img src="https://avatars.githubusercontent.com/u/25619090?v=4" alt="Profile Photo" />
+        <div class="sidebar-content">
+          <div class="profile-photo profile-photo-desktop">
+            <img src="https://avatars.githubusercontent.com/u/25619090?v=4" alt="Profile Photo" />
+          </div>
+          <h1>Tommy Purkiss</h1>
+          <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </div>
-        <h1>Tommy Purkiss</h1>
-        <ul class="nav-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
       </aside>
 
       <main class="content">
-        <section id="home" class="flex-center text-center">
+        <section id="home" class="flex-center">
           <div class="profile-photo profile-photo-mobile">
             <img src="https://avatars.githubusercontent.com/u/25619090?v=4" alt="Profile Photo" />
           </div>
 
-          <p>
-            Hey there! I'm Tommy 👋 a passionate developer based in London who loves crafting clean,
-            user-friendly web experiences.
-          </p>
-          <p>
+          <div class="intro">
+            <h2>Hey there! I'm Tommy 👋</h2>
+
+            <p>
+              I’m a London-based web developer who loves crafting seamless digital experiences.
+              Whether it's designing intuitive user interfaces or chasing down that elusive missing
+              semicolon at 2 AM, I’m all about building things that just work (most of the time 😅).
+            </p>
+          </div>
+
+          <!-- <p>
             Whether it's Angular, React (a bit), or just good old JavaScript, I'm all about turning
             ideas into polished, working code.
           </p>
           <p>
             Browse through to see some projects I'm proud of, or get in touch if you want to
             collaborate or just chat tech.
-          </p>
+          </p> -->
         </section>
 
         <hr class="section-divider" />
 
-        <section id="about" class="flex-center text-center">
-          <h2>About Me</h2>
+        <section id="about">
+          <h2 class="section-title">About Me</h2>
           <p>About me info is still pending. As you can see I am incredibly interesting!</p>
         </section>
 
         <hr class="section-divider" />
 
-        <section id="projects" class="flex-center text-center">
-          <h2>Projects</h2>
+        <section id="projects">
+          <h2 class="section-title">Projects</h2>
           <p>
             Yeah, so this section is pretty empty right now. I promise I'll fill it up soon—just
             waiting for my code to stop being shy and start showing off. In the meantime, imagine a
@@ -125,8 +133,8 @@
 
         <hr class="section-divider" />
 
-        <section id="contact" class="flex-center text-center">
-          <h2>Contact</h2>
+        <section id="contact">
+          <h2 class="section-title">Contact</h2>
           <p>Check out my socials below if you fancy connecting!</p>
           <div class="social-icons" aria-label="Social links">
             <a
