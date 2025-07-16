@@ -108,6 +108,7 @@ section {
 
 .section-title {
   font-size: 2.25rem;
+  margin-bottom: 1rem;
 }
 
 .intro p {
@@ -176,12 +177,54 @@ section {
   border-radius: 2px;
 }
 
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card.skeleton {
+  background: #232323;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  padding: 2rem 1.5rem;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+.project-card.skeleton:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+  background: #282828;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.project-desc {
+  color: #bbb;
+  font-size: 1rem;
+}
+
+/* contact */
+#contact {
+  height: auto;
+}
 /* Social Icons Styling */
 .social-icons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
 }
 
 .social-icon-link {
@@ -357,6 +400,28 @@ section {
   text-decoration: none;
 }
 
+@media (max-width: 1024px) {
+  .profile-photo-desktop {
+    display: none;
+  }
+
+  .profile-photo-mobile {
+    display: block;
+  }
+
+  .sidebar {
+    justify-content: center;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  .intro p {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .mobile-header {
     display: flex;
@@ -399,27 +464,26 @@ section {
   }
 }
 
-@media (max-width: 1024px) {
-  .profile-photo-desktop {
-    display: none;
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
-
-  .profile-photo-mobile {
-    display: block;
+  .project-card.skeleton {
+    padding: 1.25rem 1rem;
+    min-height: 120px;
   }
-
-  .sidebar {
-    justify-content: center;
+  .project-title {
+    font-size: 1.1rem;
   }
-
-  section {
-    padding: 2rem;
-  }
-
-  .intro p {
-    width: 100%;
+  .project-desc {
+    font-size: 0.95rem;
   }
 }
+
+/* =======================
+   The End
+   ======================= */
 
 /* Here's a chill Pikachu as well (is this what they call, an easter egg?) */
 /*
