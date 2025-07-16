@@ -40,7 +40,7 @@ a {
 }
 
 section {
-  height: 100%;
+  min-height: 100%;
   padding: 2rem 5rem;
   line-height: 1.6;
 }
@@ -111,9 +111,16 @@ section {
   margin-bottom: 1rem;
 }
 
+.skills-title {
+  font-size: 1.75rem;
+}
+
 .intro p {
   /* border: 1px solid white; */
   width: 80%;
+}
+.intro p:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .intro h2 {
@@ -177,6 +184,71 @@ section {
   border-radius: 2px;
 }
 
+/* About */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.skill-category {
+  background: #232323;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.2s, background 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.skill-category:hover {
+  background: #282828;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+}
+
+.skill-category h3 {
+  color: #5bbad5;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.skill-category p {
+  color: #bbb;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-category li {
+  color: #fff;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #333;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.skill-category li:before {
+  content: "▹";
+  color: #5bbad5;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.skill-category li:last-child {
+  border-bottom: none;
+}
+
 /* Projects */
 .projects-grid {
   display: grid;
@@ -195,12 +267,14 @@ section {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  transition: box-shadow 0.2s, background 0.2s;
+  transition: box-shadow 0.2s, background 0.2s, transform 0.2s, filter 0.2s;
 }
 
 .project-card.skeleton:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
   background: #282828;
+  transform: translateY(-6px) scale(1.03);
+  filter: drop-shadow(0 0 4px #5bbad5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
 }
 
 .project-title {
@@ -434,29 +508,29 @@ section {
   .content {
     /* padding: 0.5rem; */
     width: 100%;
-    /* Calculate height properly accounting for fixed header */
     height: calc(100vh - 60px);
     height: calc(100dvh - 60px);
-    /* TODO: commented out for mobile, come back and delete in future if ok */
     margin-top: 60px;
     overscroll-behavior: contain;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .skill-category {
+    padding: 1.5rem;
+  }
+
+  .skill-category h3 {
+    font-size: 1.25rem;
   }
 
   .container {
     flex-direction: column;
   }
-
-  section {
-    /* Note to self: still thinking if I want a min height on mobile for these sections */
-    /* min-height: auto; */
-    /* padding-bottom: 4resm; */
-    /* height: inherit; */
-    /* border: 1px solid white; */
-  }
-
-  /* #home {
-    justify-content: space-evenly;
-  } */
 
   .scroll-up-btn {
     bottom: 1rem;
